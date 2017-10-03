@@ -2,6 +2,7 @@ describe('wordCounter', function(){
 
   beforeEach(function(){
     wordCounter = new WordCounter
+    text = "hello world"
  });
 
   describe('on initialisation', function(){
@@ -16,8 +17,6 @@ describe('wordCounter', function(){
   });
 
   describe("#addWordsToArray", function(){
-    var text = "hello world";
-
     it("adds each word to wordArray", function(){
       wordCounter.addWordsToArray(text);
       expect(wordCounter.wordArray).toEqual(["hello", "world"])
@@ -25,9 +24,7 @@ describe('wordCounter', function(){
   });
 
   describe("#countWords",function(){
-    var text = "hello world";
-
-    it("adds new words to wordHash as keys and their occurences as values", function(){
+    it("adds new words to wordHash as keys and their occurrences as values", function(){
       wordCounter.addWordsToArray(text);
       wordCounter.countWords();
       expect(wordCounter.wordHash).toEqual({"hello":1, "world":1})
