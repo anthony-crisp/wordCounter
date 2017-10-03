@@ -5,6 +5,7 @@ describe('wordCounter', function(){
     text = "hello world"
     textWithWhitespace = "hello     world"
     punctuatedText = "hello,. ;:world!?*"
+    capitalisedText = "Hello WORLD hello World"
  });
 
   describe('on initialisation', function(){
@@ -33,6 +34,12 @@ describe('wordCounter', function(){
       wordCounter.addWordsToArray(punctuatedText);
       expect(wordCounter.wordArray).toEqual(["hello", "world"])
       });
+
+    it("ignores capitalisation", function(){
+      wordCounter.addWordsToArray(capitalisedText);
+      wordCounter.countWords();
+      expect(wordCounter.wordHash).toEqual({"hello":2, "world":2})
+    });
   });
 
   describe("#countWords",function(){
