@@ -3,6 +3,7 @@ describe('wordCounter', function(){
   beforeEach(function(){
     wordCounter = new WordCounter
     text = "hello world"
+    textWithWhitespace = "hello     world"
  });
 
   describe('on initialisation', function(){
@@ -21,6 +22,11 @@ describe('wordCounter', function(){
       wordCounter.addWordsToArray(text);
       expect(wordCounter.wordArray).toEqual(["hello", "world"])
     })
+
+    it("ignores all types of whitespace", function(){
+        wordCounter.addWordsToArray(textWithWhitespace)
+        expect(wordCounter.wordArray).toEqual(["hello", "world"])
+      });
   });
 
   describe("#countWords",function(){
