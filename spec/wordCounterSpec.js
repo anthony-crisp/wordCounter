@@ -6,5 +6,10 @@ describe('wordCounter', function(){
       var  wordCounter = new WordCounter();
       expect(wordCounter.wordArray).toEqual([]);
     })
+
+    it('has an empty Hash', function(){
+      var wordCounter = new WordCounter();
+      expect(wordCounter.wordHash).toEqual({})
+    })
   });
 });
