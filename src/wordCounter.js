@@ -1,0 +1,3 @@
+WordCounter = function() {
+    this.wordArray = []
+};
