@@ -4,7 +4,8 @@ WordCounter = function() {
 };
 
 WordCounter.prototype.addWordsToArray = function (text) {
-  this.wordArray = text.split(/\s+/);
+  this.wordArray = text.replace(/[^\w\s]|_/g, "")
+                       .split(/\s+/);
 };
 
 WordCounter.prototype.countWords = function () {

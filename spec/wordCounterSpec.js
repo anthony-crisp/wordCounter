@@ -4,6 +4,7 @@ describe('wordCounter', function(){
     wordCounter = new WordCounter
     text = "hello world"
     textWithWhitespace = "hello     world"
+    punctuatedText = "hello,. ;:world!?*"
  });
 
   describe('on initialisation', function(){
@@ -24,8 +25,13 @@ describe('wordCounter', function(){
     })
 
     it("ignores all types of whitespace", function(){
-        wordCounter.addWordsToArray(textWithWhitespace)
-        expect(wordCounter.wordArray).toEqual(["hello", "world"])
+      wordCounter.addWordsToArray(textWithWhitespace);
+      expect(wordCounter.wordArray).toEqual(["hello", "world"])
+      });
+
+    it("ignores punctuation", function(){
+      wordCounter.addWordsToArray(punctuatedText);
+      expect(wordCounter.wordArray).toEqual(["hello", "world"])
       });
   });
 
