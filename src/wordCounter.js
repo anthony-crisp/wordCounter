@@ -1,20 +1,20 @@
 WordCounter = function() {
-    this.wordArray = [];
-    this.wordHash = {};
+  this.wordArray = [];
+  this.wordHash = {};
 };
 
-WordCounter.prototype.addWordsToArray = function (text) {
+WordCounter.prototype.addWordsToArray = function(text) {
   this.wordArray = text.replace(/[^\w\s]|_/g, "")
-                       .split(/\s+/);
+    .split(/\s+/);
 };
 
-WordCounter.prototype.countWords = function () {
-  for (var index = 0; index < this.wordArray.length; index ++) {
+WordCounter.prototype.countWords = function() {
+  for (var index = 0; index < this.wordArray.length; index++) {
     var word = this.wordArray[index].toLowerCase();
     if (this.wordHash[word] === undefined) {
       this.wordHash[word] = 1;
     } else {
-      this.wordHash[word] ++;
+      this.wordHash[word]++;
     }
   }
 };
