@@ -55,4 +55,15 @@ describe('wordCounter', function() {
       })
     })
   })
+  describe("#isPrime", function() {
+    it("checks if 1 is prime number", function(){
+       expect(wordCounter.isPrime(1)).toEqual(false);
+     })
+     it("checks if 2 is prime number", function(){
+       expect(wordCounter.isPrime(2)).toEqual(true);
+     })
+     it("checks if 4 is prime number", function(){
+       expect(wordCounter.isPrime(4)).toEqual(false);
+     })
+   })
 });

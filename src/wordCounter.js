@@ -18,3 +18,10 @@ WordCounter.prototype.countWords = function() {
     }
   }
 };
+WordCounter.prototype.isPrime = function(value) {
+    var start = 2;
+      while (start <= Math.sqrt(value)) {
+        if (value % start++ < 1) return false;
+      }
+     return value > 1;
+ };
