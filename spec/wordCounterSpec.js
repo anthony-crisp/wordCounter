@@ -2,10 +2,6 @@ describe('wordCounter', function() {
 
 beforeEach(function() {
   wordCounter = new WordCounter
-  text = "hello world"
-  textWithWhitespace = "hello     world"
-  punctuatedText = "hello,. ;:world!?*"
-  capitalisedText = "Hello WORLD hello World"
 });
 
 describe('on initialisation', function() {
@@ -21,21 +17,25 @@ describe('on initialisation', function() {
 
 describe("#addWordsToArray", function() {
   it("adds each word to wordArray", function() {
+    var text = "hello world"
     wordCounter.addWordsToArray(text);
     expect(wordCounter.wordArray).toEqual(["hello", "world"])
   })
 
   it("ignores all types of whitespace", function() {
+    var textWithWhitespace = "hello     world"
     wordCounter.addWordsToArray(textWithWhitespace);
     expect(wordCounter.wordArray).toEqual(["hello", "world"])
   });
 
   it("ignores punctuation", function() {
+    var punctuatedText = "hello,. ;:world!?*"
     wordCounter.addWordsToArray(punctuatedText);
     expect(wordCounter.wordArray).toEqual(["hello", "world"])
   });
 
   it("ignores capitalisation", function() {
+    var capitalisedText = "Hello WORLD hello World"
     wordCounter.addWordsToArray(capitalisedText);
     wordCounter.countWords();
     expect(wordCounter.wordHash).toEqual({
@@ -47,6 +47,7 @@ describe("#addWordsToArray", function() {
 
 describe("#countWords", function() {
   it("adds new words to wordHash as keys and their occurrences as values", function() {
+    var text = "hello world"
     wordCounter.addWordsToArray(text);
     wordCounter.countWords();
     expect(wordCounter.wordHash).toEqual({
@@ -55,6 +56,7 @@ describe("#countWords", function() {
     })
   })
 })
+
 describe("#isPrime", function() {
   it("checks if 1 is prime number", function() {
     expect(wordCounter.isPrime(1)).toEqual(false);
@@ -66,8 +68,10 @@ describe("#isPrime", function() {
     expect(wordCounter.isPrime(4)).toEqual(false);
   })
 })
+
 describe("#addPrime", function() {
   it("states if word occurrence is prime", function() {
+    var text = "hello world"
     wordCounter.addWordsToArray(text);
     wordCounter.countWords();
     wordCounter.addPrime();
