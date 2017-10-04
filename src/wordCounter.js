@@ -4,6 +4,7 @@ WordCounter = function() {
   this.wordHashWithPrime = {};
 };
 
+
 WordCounter.prototype.addWordsToArray = function(text) {
   this.wordArray = text.replace(/[^\w\s]|_/g, "")
     .split(/\s+/);
