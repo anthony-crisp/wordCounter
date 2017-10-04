@@ -16,7 +16,8 @@ I want to be able to output the individual words and how many times it appears.
 
 
 As a user,
-Because I am curious, I would like to see if the occurrences of the words are prime numbers, that is, if the number is divisible by only itself and 1.
+Because I am curious, I would like to see if the occurrences of the words are prime numbers,
+that is, if the number is divisible by only itself and 1.
 ```
 
 ### Part 1
