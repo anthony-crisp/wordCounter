@@ -1,6 +1,7 @@
 WordCounter = function() {
   this.wordArray = [];
   this.wordHash = {};
+  this.wordHashWithPrime = {};
 };
 
 WordCounter.prototype.addWordsToArray = function(text) {
@@ -25,3 +26,13 @@ WordCounter.prototype.isPrime = function(value) {
       }
      return value > 1;
  };
+WordCounter.prototype.addPrime = function () {
+var self = this;
+
+Object.keys(self.wordHash).forEach(function(key){
+  var value = self.wordHash[key];
+  var isPrime = self.isPrime(value);
+  var arr = [value, isPrime];
+  self.wordHashWithPrime[key] = arr;
+  });
+};
