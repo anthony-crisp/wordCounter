@@ -30,7 +30,7 @@ When I was sure that I was populating the Array with just words I implemented a 
 The second part of the exercise was to determine if the occurrences were primes, I then added this information to the Hash in the form of a boolean.
 
 ### Part 3
-Until this point I had written the application in VanillaJS but had to add the Node 'require' module to read from a text file.
+Until this point I had written the application in VanillaJS but had to add the Node 'require' module to read from a text file, this was unforeseen and was what I found most challenging.
 
 Usage
 ===============
